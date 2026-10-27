@@ -1,6 +1,6 @@
 {
   "prepared_date": "2026-10-27",
-  "evidence_cutoff": "2026-10-26",
+  "evidence_cutoff": "2026-10-27",
   "date_timezone": "America/Denver",
   "scope": "References to retained offline evidence; these source artifacts are not uploaded.",
   "artifacts": [
@@ -80,6 +80,71 @@
       "bytes": 3068,
       "sha256": "d861cca11cd7c9a6fcc7ffef2e999869df0b0afca724065855782c846ef13b2b",
       "included_in_repository": false
+    },
+    {
+      "title": "MSM runtime effects continuation",
+      "offline_reference": "analysis/windows-20261027/ISSUE1-RUNTIME-EFFECTS.md",
+      "bytes": 13652,
+      "sha256": "9674e7983a95df0ad434367d624b8aba340d841b817a91dba696ff915a0dc7b9",
+      "included_in_repository": false
+    },
+    {
+      "title": "ABL unlock-gate study",
+      "offline_reference": "analysis/windows-20261027/ALTERNATIVE1-UNLOCK-GATES.md",
+      "bytes": 11893,
+      "sha256": "70d807d3623e88259c4da83672b3f06ac184dc3ef7b05846ff88a6f28b041fbc",
+      "included_in_repository": false
+    },
+    {
+      "title": "Bounded storage simulation",
+      "offline_reference": "analysis/windows-20261027/ALTERNATIVE2-SIMULATED-STORAGE.md",
+      "bytes": 7444,
+      "sha256": "65eff3881f473f050dff80924180c8e9ab804a5299fb020379fe4e6073196c20",
+      "included_in_repository": false
+    },
+    {
+      "title": "ABL identity and carrier-gate cases",
+      "offline_reference": "analysis/windows-20261027/alternative1/unlock-gate-checks.json",
+      "bytes": 7926,
+      "sha256": "533fca498f621b0a4017cc4779bb7ac83609f0b6f95a132b238e3f019d43ad20",
+      "included_in_repository": false
+    },
+    {
+      "title": "ABL internal and OEM permission cases",
+      "offline_reference": "analysis/windows-20261027/alternative1/internal-permission-checks.json",
+      "bytes": 5498,
+      "sha256": "8d482d8efb0fc9752d5e81e4b23996eb9d2b576ba64ee6130af3f9468688d805",
+      "included_in_repository": false
+    },
+    {
+      "title": "Archived permission-field validation",
+      "offline_reference": "analysis/windows-20261027/alternative1/saved-permission-fields.json",
+      "bytes": 739,
+      "sha256": "1035835bfb2eac772290944822a79852bc18f9c37e2e4fa63a7f9e1490b59ec5",
+      "included_in_repository": false
+    },
+    {
+      "title": "Encrypted-record storage journal",
+      "offline_reference": "analysis/windows-20261027/alternative2/param-storage-journal.json",
+      "bytes": 9587,
+      "sha256": "8deb93da4d46ef741321d31463021f2bed5a001c345cb439f2104450b993a306",
+      "included_in_repository": false
+    },
+    {
+      "title": "Staged PARAM storage journal",
+      "offline_reference": "analysis/windows-20261027/alternative2/param-stage-journal.json",
+      "bytes": 30365,
+      "sha256": "c5c3fcd0f0634ff174732fa2aab4eb7cad94014de236f900a2ce4b35ff1f72c2",
+      "included_in_repository": false
+    },
+    {
+      "title": "Extended captured field and setting metadata",
+      "offline_reference": "analysis/windows-20261027/issue1-offline/saved-field-metadata.json",
+      "bytes": 36935,
+      "sha256": "9a0fcc2b5540cedc67982d831bed63c07ec84511c40cb47b0bead996d2cacf8e",
+      "included_in_repository": false
     }
-  ]
+  ],
+  "last_device_observation": "2026-10-26",
+  "updated_date": "2026-10-27"
 }

@@ -1,6 +1,18 @@
 # Findings
 
-Evidence cutoff: October 26, 2026, America/Denver. Repository preparation: October 27, 2026. Confidence percentages are judgment estimates about the stated evidence, not measured probabilities of successful flashing or unlocking.
+Evidence cutoff: October 27, 2026, America/Denver. Latest device observation remains October 26; subsequent results are offline. Confidence percentages are judgment estimates about the stated evidence, not measured probabilities of successful flashing or unlocking.
+
+## Narrower Unlock Candidate
+
+**High confidence, approximately 99%, for saved bytes; moderate confidence, approximately 95%, for conditional interpretation and bounded emulation.** Twenty-two ABL cases corroborate the saved T-Mobile/Global carrier-gate difference and separate internal/OEM permission predicates. A guarded Device Info identity override connects to net/BT settings also present in MSM's PARAM processing. Actual acceptance, restoration, persistence and complete unlocking remain unverified.
+
+See [Offline Unlock-Gate Study](Unlock-Gate-Study.md). This does not support an ABL-only flash, a direct PARAM trigger or a device procedure.
+
+## PARAM Transaction and Final Verification
+
+**Moderate confidence, approximately 95%, within the modeled interfaces.** Eighteen host storage/stage cases corroborate primary-then-backup writes, partial completion on failures, and a final marker check that can pass despite another returned-byte mismatch. The models execute selected original instructions with explicit mocks and synthetic storage. They are separate bounded models, not a complete MSM session.
+
+See [Bounded Storage Simulation](Storage-Simulation.md). Disabled ordinary PARAM programming does not preserve PARAM against the separate staged paths. Independent verification and failure handling remain necessary research requirements.
 
 ## Native Windows Readback
 
@@ -52,7 +64,7 @@ Offline references: `LINUX-DELIVERY-FEASIBILITY.md`, `program-auth-emulation.jso
 
 **High confidence, approximately 99%, for saved-record and structural checks.** Both pre-device snapshots agree on 135 program records: 64 enabled and 71 disabled. Six payload-bearing records are disabled, including PARAM, persist and persist_bkp. All 70 distinct source ranges are in bounds, and six sparse source ranges pass structural checks. Thirteen relevant code ranges match across the two saved executable captures after address normalization.
 
-The userdata erase branch, later flag updates, sparse DONT_CARE handling and separate PARAM postprocessing still require review. Disabled program records do not prove that other paths leave those partitions unchanged. Source-range and sparse-structure checks do not validate all payload hashes or data checksums.
+The October 27 continuation traces a separate userdata command through sector N-6 inclusive under the recorded mode/start conditions, and identifies staged PARAM commits and encrypted primary/backup transactions. Later flag updates, lower-driver erase behavior, sparse DONT_CARE handling and omitted PARAM helpers still require review. Disabled program records do not prove preservation. Source-range and sparse-structure checks do not validate all payload hashes or data checksums.
 
 Offline references: `DELIVERY-INVENTORY.md`, `delivery-inventory.json`, `gpt-code-equivalence.json`.
 
