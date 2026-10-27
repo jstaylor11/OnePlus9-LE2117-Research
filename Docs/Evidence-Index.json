@@ -1,0 +1,85 @@
+{
+  "prepared_date": "2026-10-27",
+  "evidence_cutoff": "2026-10-26",
+  "date_timezone": "America/Denver",
+  "scope": "References to retained offline evidence; these source artifacts are not uploaded.",
+  "artifacts": [
+    {
+      "title": "Native Windows PARAM readback",
+      "offline_reference": "analysis/windows-20261026/NATIVE-MSM-READBACK-SUCCESS.md",
+      "bytes": 2874,
+      "sha256": "a3de929d60b648076c2fc879ee587abc57ba3acdd69919ea9fbff5a3dcb2698c",
+      "included_in_repository": false
+    },
+    {
+      "title": "Package GPT review",
+      "offline_reference": "analysis/windows-20261026/MSM-GPT-REVIEW.md",
+      "bytes": 5780,
+      "sha256": "18212ec6f24393e1bf440c4437bd0c4041a5c05a11b05cb0f4548a87ced0920d",
+      "included_in_repository": false
+    },
+    {
+      "title": "GPT reconstruction and loader investigation",
+      "offline_reference": "analysis/windows-20261026/GPT-TIMED-INVESTIGATION.md",
+      "bytes": 15680,
+      "sha256": "d140aeaa3c99767faf8e7a23240c67b8c70a3bb1f37c96b2cc7dd95a7472b5ae",
+      "included_in_repository": false
+    },
+    {
+      "title": "Synthetic authentication and delivery constraints",
+      "offline_reference": "analysis/windows-20261026/LINUX-DELIVERY-FEASIBILITY.md",
+      "bytes": 6075,
+      "sha256": "49da8794f65cb8a5ca12cd185d98d1746e4d7e22e23c191909cf9fe603442620",
+      "included_in_repository": false
+    },
+    {
+      "title": "Loaded records and payload inventory",
+      "offline_reference": "analysis/windows-20261026/DELIVERY-INVENTORY.md",
+      "bytes": 4616,
+      "sha256": "ccb1c9567bd7912105809b7b23609296e65f550ab1845deb019a131670cf04dc",
+      "included_in_repository": false
+    },
+    {
+      "title": "Captured runtime vectors",
+      "offline_reference": "analysis/windows-20261026/msm-isolation/passive-manual-1/runtime-gpt-vectors.json",
+      "bytes": 429209,
+      "sha256": "3dde1d65b842d2210f50c2831b92abf1297e2f766dea2a598dff00e06098cb11",
+      "included_in_repository": false
+    },
+    {
+      "title": "Loader repair emulation",
+      "offline_reference": "analysis/windows-20261026/msm-isolation/passive-manual-1/gpt-repair-emulation.json",
+      "bytes": 11715,
+      "sha256": "405bcb0fe40f5b31976ab1a28e78473946e5dc5e3814aff03d3ccdfcf283da19",
+      "included_in_repository": false
+    },
+    {
+      "title": "LUN1 reconstruction validation",
+      "offline_reference": "analysis/windows-20261026/msm-isolation/passive-manual-1/lun1-reconstruction-model.json",
+      "bytes": 5355,
+      "sha256": "e3631f70075c71b1db6b8d038290089901ddf021fd36c2896439078e5fedd956",
+      "included_in_repository": false
+    },
+    {
+      "title": "Synthetic command-token compatibility",
+      "offline_reference": "analysis/windows-20261026/msm-isolation/passive-manual-1/program-auth-emulation.json",
+      "bytes": 5473,
+      "sha256": "ddc3b8394845db906a7c2f4cc333e740d7dea19493429628c4bbd3a4e392e397",
+      "included_in_repository": false
+    },
+    {
+      "title": "Source ranges and sparse structures",
+      "offline_reference": "analysis/windows-20261026/msm-isolation/passive-manual-1/delivery-inventory.json",
+      "bytes": 82660,
+      "sha256": "6d7f8be2f3f53b02a179c790e062ae69cd111e30dc03d512c30ff66be0933cff",
+      "included_in_repository": false
+    },
+    {
+      "title": "Thirteen matched code ranges",
+      "offline_reference": "analysis/windows-20261026/msm-isolation/passive-manual-1/gpt-code-equivalence.json",
+      "bytes": 3068,
+      "sha256": "d861cca11cd7c9a6fcc7ffef2e999869df0b0afca724065855782c846ef13b2b",
+      "included_in_repository": false
+    }
+  ]
+}

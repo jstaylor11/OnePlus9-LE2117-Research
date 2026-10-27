@@ -1,0 +1,11 @@
+# Track only reviewed documentation during the initial research phase.
+*
+!.gitignore
+!.gitattributes
+!README.md
+!Docs/
+!Docs/*.md
+!Docs/Evidence-Index.json
+!.github/
+!.github/ISSUE_TEMPLATE/
+!.github/ISSUE_TEMPLATE/*.md
