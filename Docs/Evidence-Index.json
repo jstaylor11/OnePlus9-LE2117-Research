@@ -143,8 +143,22 @@
       "bytes": 36935,
       "sha256": "9a0fcc2b5540cedc67982d831bed63c07ec84511c40cb47b0bead996d2cacf8e",
       "included_in_repository": false
+    },
+    {
+      "title": "Device Info and PARAM lifecycle continuation",
+      "offline_reference": "analysis/windows-20261027/LIFECYCLE-CONTINUATION.md",
+      "bytes": 10292,
+      "sha256": "29a5dc35ff6bac925b4b10fe35dd6fb8639e5c88c771d36ce01b7362753311ca",
+      "included_in_repository": false
+    },
+    {
+      "title": "Stateful cache, restoration and connected-model results",
+      "offline_reference": "analysis/windows-20261027/lifecycle/lifecycle-results.json",
+      "bytes": 98223,
+      "sha256": "24e7d19f005121ec277a09ad52dd04afd753e7554849bc0dabedac52592c5609",
+      "included_in_repository": false
     }
   ],
   "last_device_observation": "2026-10-26",
-  "updated_date": "2026-10-27"
+  "updated_date": "2026-10-28"
 }

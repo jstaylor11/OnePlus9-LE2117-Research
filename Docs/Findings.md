@@ -8,6 +8,16 @@ Evidence cutoff: October 27, 2026, America/Denver. Latest device observation rem
 
 See [Offline Unlock-Gate Study](Unlock-Gate-Study.md). This does not support an ABL-only flash, a direct PARAM trigger or a device procedure.
 
+## Device Info and PARAM Lifecycle Continuation
+
+**Moderate confidence, approximately 95%, within the documented models; high confidence, approximately 99%, in verified input bytes and recorded checks.** Twenty-five additional bounded cases cover 14 Device Info/cache cases, eight PARAM restoration cases and three connected host/ABL sequences. The original handler and selected restoration/cache routines now execute with shared synthetic services. Provider acceptance, record integrity, the codec bridge, initial PARAM preload and other runtime/storage interfaces remain modeled.
+
+Staging and cached identity can diverge. In a modeled ordering, a later write of the whole cached structure overwrites a newer staged persistent value. Rejected writes can be obscured by the response path or a retry that sees already-mutated RAM and skips storage. A rejected primary PARAM record can restore older backup values; a valid primary is not reconciled with a divergent backup in the traced getter path.
+
+A candidate error-propagation defect also appears in the saved PARAM restoration routine: after four successful primary-write returns and four failed modeled full-record readback checks, it can return the last write's zero status and let the getter continue with stale cached state. Practical reachability, hardware impact and novelty remain unestablished. This is separate from the MSM final-marker limitation below.
+
+See [Device Info and PARAM Lifecycle](DeviceInfo-PARAM-Lifecycle.md). These cases do not complete issues 5, 6 or 7 and do not establish a hardware unlock route.
+
 ## PARAM Transaction and Final Verification
 
 **Moderate confidence, approximately 95%, within the modeled interfaces.** Eighteen host storage/stage cases corroborate primary-then-backup writes, partial completion on failures, and a final marker check that can pass despite another returned-byte mismatch. The models execute selected original instructions with explicit mocks and synthetic storage. They are separate bounded models, not a complete MSM session.

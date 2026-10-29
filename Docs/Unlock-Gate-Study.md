@@ -35,12 +35,14 @@ This is a dependency chain to investigate, not a validated device sequence. Post
 
 ## Validation
 
-Twenty-two bounded ABL cases pass: fourteen identity/carrier-gate cases and eight internal/OEM permission cases. Original ARM64 branches execute with synthetic state; number/string/runtime helpers, selected PARAM reads and internal-prefix classification are modeled. Negative/positive controls alter only emulator RAM. The real internal handler, persistent write service and complete unlock handler never execute.
+Twenty-two bounded ABL cases pass in the initial study: fourteen identity/carrier-gate cases and eight internal/OEM permission cases. Original ARM64 branches execute with synthetic state; number/string/runtime helpers, selected PARAM reads and internal-prefix classification are modeled. Negative/positive controls alter only emulator RAM. In those initial cases, the real internal handler, persistent write service and complete unlock handler never execute.
 
 The saved slot-B PE is hash checked and occurs byte-for-byte inside its retained decompressed artifact. The full ELF/FV/LZMA extraction chain and vendor signatures were not independently revalidated in this study.
 
 ## Next Investigation
 
-Trace the Device Info backend, staging/cache relationship and boot-time restoration before deciding whether the narrower route is viable. The token-acquisition route is excluded from the current research scope. No on-phone command or write is proposed by this report.
+The later [Device Info and PARAM lifecycle continuation](DeviceInfo-PARAM-Lifecycle.md) runs the original guarded handler and selected cache/restoration routines against shared synthetic services. Its 25 new cases identify separate staging/cache buffers, stale overwrite and failure-response hazards, and PARAM restoration behavior. The provider and crypto/integrity boundaries remain modeled; complete unlocking still does not execute.
+
+Next identify the matching Device Info provider and trace full initialization, acceptance and later writer/unlock ordering before deciding whether the narrower route is viable. The token-acquisition route is excluded from the current research scope. No on-phone command or write is proposed by this report.
 
 Offline references: `ALTERNATIVE1-UNLOCK-GATES.md`, `unlock-gate-checks.json`, `internal-permission-checks.json`, `saved-permission-fields.json`. Integrity references are in [Evidence Index](Evidence-Index.json). Raw evidence and local scripts remain outside this repository pending portability/disclosure review.

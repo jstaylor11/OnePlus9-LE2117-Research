@@ -1,6 +1,6 @@
 # Bounded Storage Simulation
 
-Evidence date: October 27, 2026, America/Denver. Scope: selected original MSM host routines against synthetic RAM storage. No phone command, physical write, MSM/Sandbox launch or driver change occurred.
+Evidence date: October 27, 2026, America/Denver. Scope: selected original MSM host routines against synthetic RAM storage, with a later connected host/ABL continuation documented separately. No phone command, physical write, MSM/Sandbox launch or driver change occurred.
 
 ## Result
 
@@ -42,6 +42,8 @@ The initial transaction harness incorrectly modeled a security-cookie helper as 
 
 ## Remaining Work
 
-Connect the ABL authorization/identity routines to stateful synthetic PARAM and Device Info services. Model initialization/restoration, write rejection, partial completion and cache reload. Independently verify the intended field changes and all affected copies; a final marker or success return is insufficient.
+The first [connected lifecycle continuation](DeviceInfo-PARAM-Lifecycle.md) now includes 25 new bounded cases: 14 Device Info/cache cases, eight PARAM restoration cases and three shared-state host/ABL sequences. It exercises selected original handler/cache/restoration instructions with explicit provider, integrity, codec and runtime/storage models. It does not turn the two original models above into a complete MSM session.
+
+Next resolve the matching verified-boot backend, validated PARAM format/crypto behavior and full initialization/writer ordering. Extend the connected model as those boundaries are resolved. Independently verify intended field changes and all affected copies; a final marker or success return is insufficient.
 
 Offline references: `ALTERNATIVE2-SIMULATED-STORAGE.md`, `param-storage-journal.json`, `param-stage-journal.json`, `captured-default-settings.txt`. Integrity references are in [Evidence Index](Evidence-Index.json). The existing package/GPT hold remains in force.

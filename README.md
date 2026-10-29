@@ -10,12 +10,13 @@ Establish a verified unlocked bootloader and normal Android boot on the OnePlus 
 
 Research is ongoing. A successful conversion or bootloader unlock has not been demonstrated.
 
-The latest recorded device check, on October 26, 2026, showed normal Android 14 boot with a locked bootloader. Subsequent offline work includes GPT reconstruction, authentication checks, 22 bounded ABL identity/permission cases and 18 host storage/stage cases. A narrower guarded identity-override candidate is under investigation. These results do not establish a usable unlock sequence, successful hardware writes, downgrade compatibility or recovery.
+The latest recorded device check, on October 26, 2026, showed normal Android 14 boot with a locked bootloader. Subsequent offline work includes GPT reconstruction, authentication checks, 22 bounded ABL identity/permission cases and 18 host storage/stage cases. A later continuation adds 25 stateful cases covering Device Info caches, PARAM restoration and three connected host/ABL sequences. The groups have different boundaries and are not independent end-to-end validations. A narrower guarded identity-override candidate remains under investigation. These results do not establish a usable unlock sequence, successful hardware writes, downgrade compatibility or recovery.
 
 - [Findings](Docs/Findings.md): observations, confidence and limitations.
 - [Roadmap](Docs/Roadmap.md): outstanding work and completion criteria.
 - [Unlock-gate study](Docs/Unlock-Gate-Study.md): narrower candidate and its unresolved dependencies.
 - [Storage simulation](Docs/Storage-Simulation.md): transaction order, failure cases and verification limits.
+- [Device Info and PARAM lifecycle](Docs/DeviceInfo-PARAM-Lifecycle.md): stateful continuation, cache divergence, restoration and return-status limits.
 - [Research Standards](Docs/Research-Standards.md): evidence handling and reporting rules.
 - [Evidence Index](Docs/Evidence-Index.json): hashes and references to the underlying offline records.
 
