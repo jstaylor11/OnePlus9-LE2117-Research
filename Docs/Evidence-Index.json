@@ -1,6 +1,6 @@
 {
   "prepared_date": "2026-10-27",
-  "evidence_cutoff": "2026-10-27",
+  "evidence_cutoff": "2026-10-29",
   "date_timezone": "America/Denver",
   "scope": "References to retained offline evidence; these source artifacts are not uploaded.",
   "artifacts": [
@@ -157,8 +157,43 @@
       "bytes": 98223,
       "sha256": "24e7d19f005121ec277a09ad52dd04afd753e7554849bc0dabedac52592c5609",
       "included_in_repository": false
+    },
+    {
+      "title": "Current firmware acquisition and provider trace",
+      "offline_reference": "analysis/windows-20261029/OnePlus9-Current-Provider-Capture-2026-10-29.md",
+      "bytes": 9145,
+      "sha256": "a92e78420dc59f8577a155ebea0816c8a16678914428233d9ff8ebcf7d4ebdfe",
+      "included_in_repository": false
+    },
+    {
+      "title": "Original ciphertext integrity, cv1 AES and getter cases",
+      "offline_reference": "analysis/windows-20261029/original-crypto/original-crypto-results.json",
+      "bytes": 16066,
+      "sha256": "d6cbd342f0fd0507bdf5f6aeba8c0c2d59d63b3063b2ae5019d9e61249fe9b1d",
+      "included_in_repository": false
+    },
+    {
+      "title": "Original startup record reconciliation cases",
+      "offline_reference": "analysis/windows-20261029/original-crypto/startup-record-results.json",
+      "bytes": 11176,
+      "sha256": "0cf419eeb76b404c68dba942a94a6422071399f82a9d7b5e0e222fe47782a8f6",
+      "included_in_repository": false
+    },
+    {
+      "title": "Startup study scope and setter effects",
+      "offline_reference": "analysis/windows-20261029/OnePlus9-Startup-Record-Study-2026-10-29.md",
+      "bytes": 4525,
+      "sha256": "68ef23fc5bc0662296666d292b5fa0838638f663a70f351961144d89fdf2cfae",
+      "included_in_repository": false
+    },
+    {
+      "title": "Frozen toolchain and capture provenance checkpoint",
+      "offline_reference": "analysis/windows-20261029/PUBLICATION-TOOLCHAIN-SOURCE.md",
+      "bytes": 7995,
+      "sha256": "fa60b47269daf94725b00993482f12ed886ed499f3df8ee5eef637e872b39eff",
+      "included_in_repository": false
     }
   ],
-  "last_device_observation": "2026-10-26",
-  "updated_date": "2026-10-28"
+  "last_device_observation": "2026-10-29",
+  "updated_date": "2026-10-29"
 }

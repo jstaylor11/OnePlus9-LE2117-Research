@@ -2,6 +2,8 @@
 
 Evidence date: October 27, 2026, America/Denver. Documentation published October 28. Scope: selected original saved ABL and MSM host instructions, connected through explicitly modeled synthetic RAM services. No phone command, persistent device change or native vendor-executable launch occurred.
 
+October 29 follow-up: the [current Device Info provider](Current-Firmware-Provider.md) has now been captured and identified. [Original crypto and startup checks](Original-Crypto-and-Startup.md) replace selected modeled interfaces in separate new cases. The limits below describe this October 27 study; the newer work does not retroactively change its execution scope.
+
 ## Result and Evidence Strength
 
 Twenty-five new bounded cases pass: 14 Device Info/cache cases, eight PARAM restoration cases and three connected host/ABL sequences. These are separate from the earlier 22 ABL and 18 host cases. The groups have different models and boundaries and are not independent end-to-end validations.
@@ -71,7 +73,7 @@ Initial model-development corrections covered the registration entry/prologue, A
 
 ## Remaining Work
 
-Identify the provider implementation matching the saved active firmware; trace its actual storage, acceptance, atomicity and failure behavior. Replace symbolic record acceptance and the synthetic codec with validated format/crypto behavior. Execute the relevant full initialization/restoration paths and establish actual later-writer and unlock-state ordering before considering a physical experiment.
+The October 29 capture identifies the current provider, and new cases execute original cv1 integrity/AES and the first startup record loop. Remaining work is its protected-state acceptance/atomicity and secure-world contract, migration and later restoration, complete initialization, and later-writer/unlock-state ordering. The earlier connected model still contains the explicit interfaces listed above; the complete pipeline has not been rerun with every boundary resolved.
 
 The conversion/GPT hold remains in effect. No device procedure or successful Android 14-to-11 downgrade is established.
 

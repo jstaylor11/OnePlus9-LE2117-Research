@@ -10,13 +10,18 @@ Establish a verified unlocked bootloader and normal Android boot on the OnePlus 
 
 Research is ongoing. A successful conversion or bootloader unlock has not been demonstrated.
 
-The latest recorded device check, on October 26, 2026, showed normal Android 14 boot with a locked bootloader. Subsequent offline work includes GPT reconstruction, authentication checks, 22 bounded ABL identity/permission cases and 18 host storage/stage cases. A later continuation adds 25 stateful cases covering Device Info caches, PARAM restoration and three connected host/ABL sequences. The groups have different boundaries and are not independent end-to-end validations. A narrower guarded identity-override candidate remains under investigation. These results do not establish a usable unlock sequence, successful hardware writes, downgrade compatibility or recovery.
+The latest recorded Android check, on October 29, 2026, showed LE2117 Android 14, slot B, a locked bootloader, verified boot green and completed normal boot. A subsequent read-only acquisition captured eight firmware images totaling 33 MiB. Both ABL copies match their saved references, and the current XBL contains the Device Info provider previously missing from the analysis. Supplemental PARAM and raw Device Info reads match their saved originals; the acquired boot log is unchanged historical evidence.
+
+New offline work includes ten original-crypto/getter cases and five startup-record-loop cases. Earlier studies cover 22 ABL identity/permission cases, eighteen host storage/stage cases and 25 lifecycle cases. These groups overlap questions and have different modeled boundaries; they are not independent end-to-end validations. The narrower guarded identity-override candidate remains under investigation. No flashing or unlock command was issued during the new acquisition. Complete protected-state acceptance, initialization, unlocking, downgrade compatibility and recovery remain unproven.
 
 - [Findings](Docs/Findings.md): observations, confidence and limitations.
 - [Roadmap](Docs/Roadmap.md): outstanding work and completion criteria.
 - [Unlock-gate study](Docs/Unlock-Gate-Study.md): narrower candidate and its unresolved dependencies.
 - [Storage simulation](Docs/Storage-Simulation.md): transaction order, failure cases and verification limits.
 - [Device Info and PARAM lifecycle](Docs/DeviceInfo-PARAM-Lifecycle.md): stateful continuation, cache divergence, restoration and return-status limits.
+- [Current firmware provider](Docs/Current-Firmware-Provider.md): verified acquisition, provider registration, storage paths and historical-log limits.
+- [Original crypto and startup checks](Docs/Original-Crypto-and-Startup.md): real MD5/AES execution, startup reconciliation and setter side effects.
+- [Toolchain provenance](Docs/Toolchain-Provenance.md): selected master PARAM module, import verification and capture-source distinctions.
 - [Research Standards](Docs/Research-Standards.md): evidence handling and reporting rules.
 - [Evidence Index](Docs/Evidence-Index.json): hashes and references to the underlying offline records.
 

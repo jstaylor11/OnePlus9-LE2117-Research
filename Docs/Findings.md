@@ -1,6 +1,28 @@
 # Findings
 
-Evidence cutoff: October 27, 2026, America/Denver. Latest device observation remains October 26; subsequent results are offline. Confidence percentages are judgment estimates about the stated evidence, not measured probabilities of successful flashing or unlocking.
+Evidence cutoff: October 29, 2026, America/Denver. Fresh Android observations and targeted read-only captures are distinguished below from offline static analysis and emulation. Confidence percentages are judgment estimates about the stated evidence, not measured probabilities of successful flashing or unlocking.
+
+## Current Firmware and Provider
+
+**High confidence, approximately 99%, in acquisition checks and byte comparisons; moderate confidence, approximately 95%, in conditional static interpretation.** Fresh Android readings showed LE2117 Android 14, slot B, locked state, verified boot green and completed normal boot. Eight targeted firmware reads completed with expected lengths and transfer-log checks. Both ABL copies match their saved references. The directly captured XBL contains the exact Device Info protocol in VerifiedBootDxe, interface revision `0x10003`.
+
+The provider reaches security-dependent `devinfo` partition and secure `keymaster` service paths; its diagnostics label the latter RPMB. The actual security word and secure-world acceptance were not queried. A current raw partition copy is not assumed equivalent to the protected service. The first acquisition failed after EDL disappeared before client launch; staging before transition corrected the observed sequencing problem.
+
+Supplemental PARAM and raw `devinfo` match saved originals; inspected authorization fields remain zero. The acquired boot log is identical to its September 26 copy. Its reports of both backend paths are historical and do not identify the latest boot's selection. See [Current Firmware Provider](Current-Firmware-Provider.md).
+
+## Original Crypto and Startup Reconciliation
+
+**Moderate confidence, approximately 95%, within the stated models; high confidence, approximately 99%, in recorded input identity and checks.** Ten new cases replace symbolic ciphertext integrity and the synthetic codec with original version-1 MD5/AES instructions in selected paths. Five startup cases execute the original first record-checking loop with modeled block/storage services, stopping before migration and later protected-state processing.
+
+Matching candidate copies survive that checkpoint; newer valid update counters cause synchronization, and failed primary integrity can restore the older backup. The master setter used in the RAM fixture updates only the primary record, advances its update counter and resets its recovery counter. Those effects require a complete-diff review before a physical experiment. The selected getter also does not check the embedded plaintext digest in the tested path; full initialization may impose additional checks.
+
+See [Original Crypto and Startup Checks](Original-Crypto-and-Startup.md). These results qualify earlier getter-only behavior without demonstrating complete initialization or hardware acceptance.
+
+## EDL Runtime Selection
+
+**High confidence, approximately 99%, in the source/import audit and focused tests.** The accepted runtime substitutes only the PARAM module from the research fork's master commit `9f796eb` into an isolated copy of the existing base. Actual imports and the OnePlus transport's bound class select that file; all three committed focused tests pass offline.
+
+The completed captures used the older installation before this verification. Core read-transport files match the selected master, but the capture provenance remains unchanged. The selected guard does not implement the separate version-2 derivation research or unlocking. See [Toolchain Provenance](Toolchain-Provenance.md).
 
 ## Narrower Unlock Candidate
 
@@ -8,9 +30,9 @@ Evidence cutoff: October 27, 2026, America/Denver. Latest device observation rem
 
 See [Offline Unlock-Gate Study](Unlock-Gate-Study.md). This does not support an ABL-only flash, a direct PARAM trigger or a device procedure.
 
-## Device Info and PARAM Lifecycle Continuation
+## Device Info and PARAM Lifecycle Continuation (October 27)
 
-**Moderate confidence, approximately 95%, within the documented models; high confidence, approximately 99%, in verified input bytes and recorded checks.** Twenty-five additional bounded cases cover 14 Device Info/cache cases, eight PARAM restoration cases and three connected host/ABL sequences. The original handler and selected restoration/cache routines now execute with shared synthetic services. Provider acceptance, record integrity, the codec bridge, initial PARAM preload and other runtime/storage interfaces remain modeled.
+**Moderate confidence, approximately 95%, within the documented models; high confidence, approximately 99%, in verified input bytes and recorded checks.** This earlier study's 25 bounded cases cover 14 Device Info/cache cases, eight PARAM restoration cases and three connected host/ABL sequences. The original handler and selected restoration/cache routines execute with shared synthetic services. In that study, provider acceptance, record integrity, the codec bridge, initial PARAM preload and other runtime/storage interfaces remain modeled. The October 29 results above resolve selected boundaries in separate cases.
 
 Staging and cached identity can diverge. In a modeled ordering, a later write of the whole cached structure overwrites a newer staged persistent value. Rejected writes can be obscured by the response path or a retry that sees already-mutated RAM and skips storage. A rejected primary PARAM record can restore older backup values; a valid primary is not reconciled with a divergent backup in the traced getter path.
 

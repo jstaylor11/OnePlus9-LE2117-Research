@@ -44,6 +44,8 @@ The initial transaction harness incorrectly modeled a security-cookie helper as 
 
 The first [connected lifecycle continuation](DeviceInfo-PARAM-Lifecycle.md) now includes 25 new bounded cases: 14 Device Info/cache cases, eight PARAM restoration cases and three shared-state host/ABL sequences. It exercises selected original handler/cache/restoration instructions with explicit provider, integrity, codec and runtime/storage models. It does not turn the two original models above into a complete MSM session.
 
-Next resolve the matching verified-boot backend, validated PARAM format/crypto behavior and full initialization/writer ordering. Extend the connected model as those boundaries are resolved. Independently verify intended field changes and all affected copies; a final marker or success return is insufficient.
+The [October 29 provider capture](Current-Firmware-Provider.md) now identifies the current backend module. Separate [original crypto and startup cases](Original-Crypto-and-Startup.md) execute cv1 integrity/AES and first-loop reconciliation, without converting the earlier host/ABL sequences into a complete validated pipeline.
+
+Next resolve the secure-world contract and full migration/initialization/writer ordering. Extend the connected model as those boundaries are resolved. Independently verify every intended field, counter and affected copy; a final marker or success return is insufficient.
 
 Offline references: `ALTERNATIVE2-SIMULATED-STORAGE.md`, `param-storage-journal.json`, `param-stage-journal.json`, `captured-default-settings.txt`. Integrity references are in [Evidence Index](Evidence-Index.json). The existing package/GPT hold remains in force.

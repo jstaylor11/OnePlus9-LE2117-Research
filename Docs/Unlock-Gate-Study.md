@@ -41,8 +41,10 @@ The saved slot-B PE is hash checked and occurs byte-for-byte inside its retained
 
 ## Next Investigation
 
+The [October 29 current-firmware capture](Current-Firmware-Provider.md) confirms that the phone's ABL partitions match the saved references and identifies the matching Device Info provider. [Original crypto and startup cases](Original-Crypto-and-Startup.md) now resolve selected earlier crypto/preload assumptions, without completing the protected-state or unlock path.
+
 The later [Device Info and PARAM lifecycle continuation](DeviceInfo-PARAM-Lifecycle.md) runs the original guarded handler and selected cache/restoration routines against shared synthetic services. Its 25 new cases identify separate staging/cache buffers, stale overwrite and failure-response hazards, and PARAM restoration behavior. The provider and crypto/integrity boundaries remain modeled; complete unlocking still does not execute.
 
-Next identify the matching Device Info provider and trace full initialization, acceptance and later writer/unlock ordering before deciding whether the narrower route is viable. The token-acquisition route is excluded from the current research scope. No on-phone command or write is proposed by this report.
+Next trace the captured provider's secure-service contract, full initialization, acceptance and later writer/unlock ordering before deciding whether the narrower route is viable. The token-acquisition route is excluded from the current research scope. No persistent write or unlock command is proposed by this report.
 
 Offline references: `ALTERNATIVE1-UNLOCK-GATES.md`, `unlock-gate-checks.json`, `internal-permission-checks.json`, `saved-permission-fields.json`. Integrity references are in [Evidence Index](Evidence-Index.json). Raw evidence and local scripts remain outside this repository pending portability/disclosure review.
